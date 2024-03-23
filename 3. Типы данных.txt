@@ -10,4 +10,5 @@ fun main() {
     isChild = (height < 1.50) || (weight < 40)
     info = "$firstName $lastName $height $weight $isChild"
     println (info)
+println ("Hi")
 }
