@@ -1,0 +1,25 @@
+fun main() {
+    var enteredNumber: Long
+    do {
+        println(message = "Enter a number to which you want to build the Fibonacci series. The number must be > 0.")
+        enteredNumber = readlnOrNull()?.toLongOrNull() ?: return
+    }
+    while (enteredNumber <= 0)
+    println(fibonacciSeries(enteredNumber))
+}
+fun fibonacciSeries(n: Long): Long {
+    if (n == 1.toLong()) return 0
+    var number1: Long = 0
+    var number2: Long = 1
+    var number3: Long
+    println(0)
+    println(1)
+    for (i in 2..n) {
+        number3 = number1 + number2
+        number1 = number2
+        number2 = number3
+        println(number3)
+    }
+    print ("Entered number was: ")
+    return(n)
+}

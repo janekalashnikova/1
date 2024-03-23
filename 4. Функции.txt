@@ -1,0 +1,26 @@
+fun main() {
+    val sourceString = "F2p)v\"y233{0->c}ttelciFc"
+    var substr1 = sourceString.substring(0,sourceString.length/2)
+    var substr2 = sourceString.substring(sourceString.length/2)
+    substr1 = magic1(substr1)
+    substr2 = magic2(substr2)
+    print (substr1)
+    println(substr2)
+}
+fun magic1 (str: String) : String{
+    var str = shift(str) {char -> char + 1}
+    str = str.replace("5","s")
+    str = str.replace("4","u")
+    str = shift(str) {char -> char - 3}
+    str = str.replace("0","o")
+    return str
+}
+fun magic2 (str: String) : String{
+    var str = str.reversed()
+    str = shift(str) {char -> char - 4}
+    str = str.replace("_"," ")
+    return str
+}
+fun shift(str: String, transform: (Char) -> Char): String {
+    return str.map(transform).joinToString("")
+}
